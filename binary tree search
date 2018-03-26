@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+class node
+{
+int data;
+node *left;
+node *right;
+
+};
+
+class BST{
+public:
+node *root;
+ void insert(int);
+        BST()
+        {
+            root = NULL;
+        }
+
+};
+void insert(node *tree, node *newnode)
+{
+    if (root == NULL)
+    {
+        root = new node;
+        root->data = newnode->data;
+        root->left = NULL;
+        root->right = NULL;
+        cout<<"Root Node is Added"<<endl;
+        return;
+    }
+
+    if (tree->data == newnode->data)
+    {
+        cout<<"Element already in the tree"<<endl;
+        return;
+    }
+    if (tree->data > newnode->data)
+    {
+
+        if (tree->left != NULL)
+        {
+            insert(tree->left, newnode);
+        }
+        else
+        {
+            tree->left = newnode;
+            (tree->left)->left = NULL;
+            (tree->left)->right = NULL;
+            cout<<"Node Added To Left"<<endl;
+            return;
+-- INSERT --                                                                                                                                                                                     38,14         Top
